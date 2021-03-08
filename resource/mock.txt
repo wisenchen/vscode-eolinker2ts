@@ -1,0 +1,29 @@
+## json 
+{
+    "retCode": "Se6Ze",
+    "retMsg": "AS3Dhk",
+    "data": {
+        "orderCount": "skJ",
+        "tobeShipped": "ZIO",
+        "toPay": "^8ZE)b",
+        "shipped": "HA34v",
+        "refund": "(Fmg"
+    }
+}
+## table
+retCode	
+[string]	是	0000成功		
+retMsg	
+[string]	是			
+data	
+[object]	是			
+orderCount	
+[string]	是	订单数量		
+tobeShipped	
+[string]	是	待发货		
+toPay	
+[string]	是	待付款		
+shipped	
+[string]	是	已发货		
+refund复制
+[string]	是	退款
