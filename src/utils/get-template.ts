@@ -55,7 +55,7 @@ const generateInterfaceTemplate = (interfaceType: InterfaceType) => {
 /**
  * 生成model的模板
  */
-const generateModelTemplate = (modelTpe: ModelType) => {
+export const generateModelTemplate = (modelTpe: ModelType) => {
   // 首字母转大写
   const typeName = modelTpe.typeName;
   modelTpe.typeName = typeName[0].toUpperCase() + typeName.slice(1);
@@ -73,9 +73,15 @@ const generateModelTemplate = (modelTpe: ModelType) => {
 /**
  * 生成model的构造器中内容
  */
-const getCnstructorInnerContent = (tsMapArr: TsModel[]) => {
+export const getCnstructorInnerContent = (tsMapArr: TsModel[] | string[]) => {
   return tsMapArr
-    .map((item) => `\tthis.${item.name} = data.${item.name};`)
+    .map((item: TsModel | string) => {
+      if(typeof item === 'string') {
+        return `\tthis.${item} = data.${item};`;
+      }else {
+        return `\tthis.${item.name} = data.${item.name};`;
+      }
+    })
     .join("\n\t");
 };
 
@@ -87,7 +93,7 @@ const filterIgnoreFileds = (tsMapArr: TsModel[]) => {
     .getConfiguration()
     .get("Eolinker2Ts.ignoreFileds") as string[];
   const ignoreSet = new Set(ignoreFileds);
-  return tsMapArr.filter((item) => !ignoreSet.has(item.name));
+  return tsMapArr.filter(item => !ignoreSet.has(item.name));
 };
 
 /**

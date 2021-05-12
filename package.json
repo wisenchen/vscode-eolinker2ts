@@ -24,7 +24,6 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:eolinker2ts.selection2ts",
     "onCommand:eolinker2ts.paste2ts"
   ],
   "main": "./dist/extension.js",
@@ -72,11 +71,6 @@
     },
     "commands": [
       {
-        "command": "eolinker2ts.selection2ts",
-        "title": "将选中内容替换为typescript模板",
-        "category": "Eolinker2Ts"
-      },
-      {
         "command": "eolinker2ts.paste2ts",
         "title": "将复制的内容转成ts模板和粘贴",
         "category": "Eolinker2Ts"
@@ -87,16 +81,7 @@
         "command": "eolinker2ts.paste2ts",
         "key": "alt+shift+v"
       }
-    ],
-    "menus": {
-      "editor/context": [
-        {
-          "when": "resourceExtname == .ts && editorHasSelection",
-          "command": "eolinker2ts.selection2ts",
-          "group": "navigation"
-        }
-      ]
-    }
+    ]
   },
   "scripts": {
     "vscode:prepublish": "npm run package",

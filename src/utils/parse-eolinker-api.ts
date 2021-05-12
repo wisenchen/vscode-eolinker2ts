@@ -9,7 +9,7 @@ export const parseEolinkerApi = (mockData: string) => {
   // 按行分割
   const rowData = mockData.split(/\r?\n/);
   if (rowData.length % 2 !== 0) {
-    throw "选中的内容无法解析";
+    throw "无法解析复制内容";
   }
   // 每两行为一条数据
   const lineData = [];
