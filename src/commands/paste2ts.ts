@@ -59,7 +59,7 @@ class Paste2ts {
 
   convertJson() {
     const replaceStr = typeofJsonc(
-      JSON.stringify(JSON.parse(this.parseText)),
+      this.parseText,
       this.typeName,
       {
         addExport: true,
@@ -71,7 +71,7 @@ class Paste2ts {
 
   convertInterface() {
     interfaceMatchReg.test(this.parseText);
-    const content = RegExp.$2.trim();
+    const content = '\t' + RegExp.$2.trim();
     const fileds = this.parseText
       .match(/\w+\??:\s\w+;/g)
       ?.map(item => item.split(/\??:/)[0]);

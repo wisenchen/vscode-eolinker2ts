@@ -73,16 +73,15 @@ export const generateModelTemplate = (modelTpe: ModelType) => {
 /**
  * 生成model的构造器中内容
  */
-export const getCnstructorInnerContent = (tsMapArr: TsModel[] | string[]) => {
-  return tsMapArr
-    .map((item: TsModel | string) => {
-      if(typeof item === 'string') {
-        return `\tthis.${item} = data.${item};`;
-      }else {
-        return `\tthis.${item.name} = data.${item.name};`;
-      }
-    })
-    .join("\n\t");
+export const getCnstructorInnerContent = (tsMapArr: (TsModel | string)[]) => {
+  const resArr = tsMapArr.map((item: TsModel | string) => {
+    if (typeof item === "string") {
+      return `\tthis.${item} = data.${item};`;
+    } else {
+      return `\tthis.${item.name} = data.${item.name};`;
+    }
+  });
+  return resArr.join("\n\t");
 };
 
 /**

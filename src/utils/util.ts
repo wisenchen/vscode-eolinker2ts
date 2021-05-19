@@ -6,7 +6,8 @@ export const isJson = (str: string) => {
     JSON.parse(str);
     return true;
   } catch (error) {
-    return false;
+    // 有可能是jsonc的格式
+    return /^\{(.*)\}$/s.test(str);
   }
 };
 

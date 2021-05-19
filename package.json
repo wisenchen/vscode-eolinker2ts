@@ -4,7 +4,7 @@
   "description": "将Eolinker的api转换成typescript使用的类型模板",
   "author": "wisen",
   "publisher": "wisen",
-  "version": "0.0.1",
+  "version": "1.0.2",
   "engines": {
     "vscode": "^1.52.0"
   },

@@ -5,7 +5,7 @@
 ## 功能特性
 1. 在后缀为model.ts的文件会生成一个Model,其他文件下生成interface
 5. 默认添加 readonly 可修改 eolinker2ts.isReadonly 配置项
-6. 支持忽略特定字段
+6. 支持忽略特定字段（只支持Eolinker方式的转换）
 7. 支持按是否可选或首字母排序
 ## 用法示例
 1. 将复制的内容转换为typescript模板后粘贴
@@ -28,10 +28,10 @@
 | eolinker2ts.orderingRule | 字段的排序规则 0: 不排序, 1：按是否可选向下, 2：按首字母向下 | enum | 0 |
 
 
-## 版本更新
+## change log
 
-### Release 2.0.0 
+### Release 1.0.1
 1. 支持json格式转换
 2. 移除选择内容转换功能
 3. 支持把当前interface转model
-4. model模型修改（可选择使用旧版模型）
+4. 默认添加readonly选项

@@ -11,4 +11,4 @@ export const typeMatchReg = /^\[([a-z]+)\]$/;
 /**
  * interface类型正则
  */
-export const interfaceMatchReg = /(export)?\s?interface\s\w+\s\{(.*)\}/s;
+export const interfaceMatchReg = /^(export)?\s?interface\s\w+\s\{(.*)\}$/s;
