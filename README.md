@@ -30,8 +30,11 @@
 
 ## change log
 
-### Release 1.0.1
+### Release 1.0.2
 1. 支持json格式转换
 2. 移除选择内容转换功能
 3. 支持把当前interface转model
 4. 默认添加readonly选项
+
+### Release 1.0.3
+1. 降低vscode最低要求版本
